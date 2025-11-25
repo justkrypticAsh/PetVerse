@@ -1,6 +1,6 @@
 <!-- PROJECT LOGO -->
 <p align="center">
-  <img src="https://img.icons8.com/?size=128&id=O6PBD5U9PStV&format=png" width="120"/>
+  <img src="https://share.google/images/1vFwXgbATUNwcOLZs" width="120"/>
 </p>
 
 <h1 align="center">🐾 PetVerse — Pet Adoption Platform</h1>
@@ -12,7 +12,7 @@
 <p align="center">
   <!-- Shields.io Badges -->
   <img src="https://img.shields.io/badge/Java-17-orange?style=for-the-badge&logo=java"/>
-  <img src="https://img.shields.io/badge/Maven-Build-success-brightgreen?style=for-the-badge&logo=apachemaven"/>
+  <img src="https://www.google.com/imgres?q=maven%20logo&imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F5%2F52%2FApache_Maven_logo.svg%2F1280px-Apache_Maven_logo.svg.png&imgrefurl=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3AApache_Maven_logo.svg&docid=7sX6XkybIyx6LM&tbnid=P85lqIq29_4mLM&vet=12ahUKEwj6ssKct42RAxVcTmwGHaN9GvkQM3oECCEQAA..i&w=1280&h=324&hcb=2&ved=2ahUKEwj6ssKct42RAxVcTmwGHaN9GvkQM3oECCEQAA"/>
   <img src="https://img.shields.io/badge/Tomcat-11.0-blue?style=for-the-badge&logo=apachetomcat"/>
   <img src="https://img.shields.io/badge/MySQL-8.0-blue?style=for-the-badge&logo=mysql"/>
 </p>
@@ -206,7 +206,7 @@ http://localhost:8080/petverse/
 | README + Presentation | ✅ Completed |
 | Full MVC Implementation | ⏳ Review-2 |
 | JSP Pages + UI | ⏳ Review-2 |
-| CRUD + Adoption Flow | ⏳ Review-3 |
+| CRUD + Adoption Flow | ⏳ Review-2 |
 
 ---
 
