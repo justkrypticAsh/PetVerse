@@ -1,18 +1,15 @@
 <!-- PROJECT LOGO -->
 <p align="center">
-  <img src="https://img.icons8.com/?size=128&id=O6PBD5U9PStV&format=png" width="120"/>
+  <img src="https://img.icons8.com/?size=128&id=O6PBD5U9PStV&format=png" width="110"/>
 </p>
 
 <h1 align="center">🐾 PetVerse — Pet Adoption Platform</h1>
 
-<p align="center">
-  <b>Java Servlets • JSP • JDBC • Maven • Tomcat</b>
-</p>
+<p align="center"><b>Java Servlets • JSP • JDBC • Maven • Tomcat</b></p>
 
 <p align="center">
-  <!-- Shields.io Badges -->
-  <img src="https://img.shields.io/badge/Java-17-orange?style=for-the-badge&logo=java"/>
-  <img src="https://img.shields.io/badge/Maven-Build-success-brightgreen?style=for-the-badge&logo=apachemaven"/>
+  <img src="https://img.shields.io/badge/Java-17-orange?style=for-the-badge&logo=openjdk"/>
+  <img src="https://img.shields.io/badge/Maven-Build Success-brightgreen?style=for-the-badge&logo=apachemaven"/>
   <img src="https://img.shields.io/badge/Tomcat-11.0-blue?style=for-the-badge&logo=apachetomcat"/>
   <img src="https://img.shields.io/badge/MySQL-8.0-blue?style=for-the-badge&logo=mysql"/>
 </p>
@@ -21,203 +18,197 @@
 
 ## 📌 Overview
 
-**PetVerse** is a web-based Pet Adoption System built entirely using **Core Java technologies**.  
-This project follows MVC architecture using:
+**PetVerse** is a complete web-based **Pet Adoption System** built using **Core Java**, focusing on clean MVC design, seamless integration, and strong data validation.
 
-- Java Servlets  
-- JSP (View Layer)  
-- JDBC + HikariCP (Database Layer)  
-- Maven (Build)  
-- Apache Tomcat (Deployment)
+This project is created for **Review-2 (Final Submission)** and includes:
 
-The project is built as part of **GUVI Full Stack Java Developer (Review-1)**.
+✔ Fully functional adoption flow  
+✔ User Authentication (Login/Register)  
+✔ Pet CRUD (Add, Edit, Delete)  
+✔ SweetAlert2-based UI  
+✔ Responsive Bootstrap design  
+✔ Session-based access control  
+✔ Database-driven dynamic pet listing  
 
 ---
 
 ## 🧰 Tech Stack
 
-| Layer | Technologies Used |
-|------|-------------------|
-| **Frontend** | JSP, HTML5, CSS, Bootstrap |
-| **Backend** | Java 17, Servlets, JDBC |
-| **Database** | MySQL 8.0, HikariCP Connection Pool |
+| Layer | Technology |
+|------|------------|
+| **Frontend** | JSP, HTML5, CSS, Bootstrap 5, SweetAlert2 |
+| **Backend** | Java 17, Jakarta Servlets |
+| **Database** | MySQL 8.0 |
+| **Connection** | JDBC |
 | **Server** | Apache Tomcat 11 |
 | **Build Tool** | Maven |
 | **Version Control** | Git + GitHub |
 
 ---
 
-## 📁 Folder Structure
+## ✨ Core Features
+
+### 👤 User Features
+- Create account (Register)
+- Login securely
+- View all pets dynamically
+- Adopt pets (SweetAlert confirmation)
+- Adoption saved in DB (non-blocking)
+
+### 👨‍💼 Admin Features
+- Add new pets
+- Edit existing pets
+- Delete pets
+- View/manage adoption requests
+
+### 🎨 UI / UX Highlights
+- Glassmorphism cards  
+- Gradient animated borders  
+- Modern button animations  
+- Fade-in transitions  
+- Emoji + UTF-8 Support  
+
+---
+
+## 📁 Project Structure
 
 ```
 PetVerse/
  ├── pom.xml
- ├── schema.sql
  ├── README.md
- ├── presentation.pdf
  ├── src/
  │   ├── main/
  │   │   ├── java/com/project/petverse/
- │   │   │   ├── controller/ (Servlets)
- │   │   │   ├── dao/        (DB Layer)
- │   │   │   ├── model/      (JavaBeans)
- │   │   │   └── util/       (DB Connection)
- │   │   ├── resources/
- │   │   │    └── db.properties
+ │   │   │   ├── model/
+ │   │   │   ├── dao/
+ │   │   │   ├── servlet/
+ │   │   │   └── util/
  │   │   └── webapp/
- │   │        ├── index.jsp
- │   │        ├── pages/*.jsp
+ │   │        ├── home.jsp
+ │   │        ├── login.jsp
+ │   │        ├── register.jsp
+ │   │        ├── addPet.jsp
+ │   │        ├── listPets.jsp
+ │   │        ├── editPet.jsp
+ │   │        ├── petDetails.jsp
+ │   │        ├── navbar.jsp
  │   │        └── WEB-INF/web.xml
  └── target/petverse.war
 ```
 
 ---
 
-## 🗄️ Database Schema (MySQL)
+## 🗄️ MySQL Database Schema
 
-Execute:
+### **users**
+```
+id (PK)
+name
+email
+password
+```
 
+### **pets**
+```
+id (PK)
+name
+type
+breed
+age
+description
+image_url
+status
+```
+
+### **adoption_requests**
+```
+id (PK)
+pet_id (FK)
+user_id (FK)
+adopter_name
+adopter_email
+message
+status
+request_date
+adopted_at
+```
+
+---
+
+## ⚙️ Database Configuration
+
+File:
+
+```
+src/main/java/com/project/petverse/util/DBConnection.java
+```
+
+Set:
+
+```java
+private static final String URL = "jdbc:mysql://localhost:3306/petverse_db";
+private static final String USERNAME = "root";
+private static final String PASSWORD = "your_password";
+```
+
+---
+
+## 🔧 Build Instructions
+
+### 1️⃣ Build project (WAR)
 ```bash
-mysql -u root -p < schema.sql
+mvn clean package
 ```
 
-### Tables included:
-- `users`
-- `pets`
-- `adoption_requests`
-
----
-
-## 🔌 Configure Database Connection
-
-Edit:
-
-```
-src/main/resources/db.properties
-```
-
-Add:
-
-```
-jdbc.url=jdbc:mysql://localhost:3306/petverse
-jdbc.username=root
-jdbc.password=YOUR_PASSWORD
-jdbc.maximumPoolSize=10
-```
-
----
-
-## 🛠️ Build Project (WAR File)
-
-```
-mvn -U clean package
-```
-
-Generates:
-
-```
-target/petverse.war
-```
-
----
-
-## 🚀 Deploy on Apache Tomcat (macOS)
-
-### 1. Install Tomcat
+### 2️⃣ Deploy WAR to Tomcat
 ```bash
-brew install tomcat
+cp target/petverse.war /opt/homebrew/Cellar/tomcat/11.0.14/libexec/webapps/
 ```
 
-### 2. Copy WAR file
+### 3️⃣ Start Tomcat
 ```bash
-cp target/petverse.war /opt/homebrew/opt/tomcat/libexec/webapps/
+catalina start
 ```
 
-### 3. Start server
-```bash
-brew services start tomcat
+### 4️⃣ Access App
 ```
-
-### 4. Open in browser
-```
-http://localhost:8080/petverse/
+http://localhost:8080/petverse
 ```
 
 ---
 
-## 🔍 Test Endpoints
+## 🧪 Testing Checklist
 
-| Endpoint | Description |
-|----------|-------------|
-| `/petverse/` | Home page |
-| `/petverse/hello` | HelloServlet test |
-| `/petverse/test-db` | Database connection test |
-
----
-
-## 🧩 Architecture Diagram (MVC)
-
-```
-        +-------------+
-        |   Client    |
-        +------+------+
-               |
-               v
-      +--------+---------+
-      |    Servlet       |  <-- Controller
-      +--------+---------+
-               |
-               v
-      +--------+---------+
-      |     Service      |
-      +--------+---------+
-               |
-               v
-      +--------+---------+
-      |       DAO        | <-- JDBC + HikariCP
-      +--------+---------+
-               |
-               v
-          +----+----+
-          |  MySQL  |
-          +---------+
-```
+✔ Register / Login  
+✔ Add Pet  
+✔ Edit Pet  
+✔ Delete Pet  
+✔ Adopt Pet (popup)  
+✔ Adoption saved in DB  
+✔ Dynamic pet listings  
+✔ UTF-8 Emoji working  
+✔ Smooth animations  
 
 ---
 
-## 🖼️ Screenshots (Coming in Review-2)
+## 📝 Review-2 Requirements (Status)
 
-<p align="center">
-  <i>Screenshots will be added after completing UI pages.</i>
-</p>
-
----
-
-## 📌 Review-1 Deliverables (Status)
-
-| Task | Status |
-|------|--------|
-| GitHub Repo Setup | ✅ Completed |
-| Maven Project | ✅ Completed |
-| Database Schema | ✅ Completed |
-| WAR Build Success | ✅ Completed |
-| Tomcat Deployment | ✅ Completed |
-| Test Servlet Working | ✅ Completed |
-| README + Presentation | ✅ Completed |
-| Full MVC Implementation | ⏳ Review-2 |
-| JSP Pages + UI | ⏳ Review-2 |
-| CRUD + Adoption Flow | ⏳ Review-3 |
+| Requirement | Status |
+|------------|--------|
+| Core Features | ✅ Completed |
+| Error Handling | ✅ Completed |
+| Data Validation | ✅ Completed |
+| Integration | ✅ Completed |
+| UI & Design | ✅ Completed |
+| Robustness | ✅ Completed |
+| GitHub README | ✅ Completed |
 
 ---
 
 ## 👨‍💻 Author
-
 **Ashish Kumar Sharma**  
-GitHub: https://github.com/justkrypticAsh
+🔗 GitHub: https://github.com/justkrypticAsh
 
 ---
 
-<p align="center">
-  ⭐ If you like this project, consider giving it a star on GitHub!
-</p>
-
+<p align="center"><b>⭐ Please consider giving the repo a star!</b></p>
