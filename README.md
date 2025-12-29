@@ -148,7 +148,7 @@ Set:
 ```java
 private static final String URL = "jdbc:mysql://localhost:3306/petverse_db";
 private static final String USERNAME = "root";
-private static final String PASSWORD = "your_password";
+private static final String PASSWORD = "Lko567u";
 ```
 
 ---
@@ -206,7 +206,9 @@ http://localhost:8080/petverse
 ---
 
 ## 👨‍💻 Author
-**Ashish Kumar Sharma**  
+**Ashish Kumar Sharma**
+**Ayush Pratap Singh(member)**
+**Mohammad Atif(member)**
 🔗 GitHub: https://github.com/justkrypticAsh
 
 ---
